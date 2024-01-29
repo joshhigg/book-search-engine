@@ -43,4 +43,4 @@ const typeDefs = `
     }
 `
 
-export default typeDefs;
+module.exports = typeDefs
