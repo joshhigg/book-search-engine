@@ -1,5 +1,6 @@
 const express = require('express');
 const { ApolloServer } = require('@apollo/server')
+const cors = require('cors');
 const { expressMiddleware } = require('@apollo/server/express4')
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
@@ -13,6 +14,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
 })
+
+app.use(cors());
 
 const startApolloServer = async () => {
   await server.start();
